@@ -1,0 +1,21 @@
+<title>View Photos!</title>
+
+{% if album_name %}
+  	<h4> This is {{album_name}}!</h4>
+{% else %}
+	<h4> Album name missing. </h4>
+{% endif %}
+
+<body>	
+	{% if photos %}
+		<h1>Your Photos: </h1>
+		{% for photo in photos %}
+			<li>{{photo[2]}}<br>
+			<img src='data:image/jpg;base64, {{base64.b64encode(photo[0]).decode("ascii") }}' width = "200" /></li>
+		{% endfor %}
+	{% else %}
+		<h4> This alnum is empty. </h4>
+	{% endif %}
+</body>
+    
+<a href='/'>Home</a>

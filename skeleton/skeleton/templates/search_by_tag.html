@@ -1,0 +1,28 @@
+<head>
+    <title>Search Pictures by Tag</title>
+</head>
+    <body>
+        <div class="title">
+            <h1>Search Pictures by Tag</h1>
+        </div>
+        <a href='/'>Home</a>
+        <form method="POST" enctype="multipart/form-data" action="/search_by_tag">
+            <label for="tag"> Select Tag: </label>
+            <select name = "tag">
+           	{% for tags in data %}
+            		<option value = {{tags[0]}}> {{tags[1]}} </option> 
+            	{% endfor %}
+	    </select>
+
+            
+            <input type="submit" value="Submit" />
+        </form>
+        
+    </body>
+
+	{% if photos %}
+		{% for photo in photos %}
+			<li>{{photo[1]}}<br>
+				<img src='data:image/jpg;base64, {{base64.b64encode(photo[0]).decode("ascii") }}' width = "200" /></li>
+		{% endfor %}
+	{% endif %}

@@ -1,0 +1,30 @@
+<title>Friend Request!</title>
+</head>
+
+<body>
+	<div class="title">
+		<h1>Friend Requests: </h1>
+        </div>
+        <p> To accept their request, add them back in the "Add Friend" Tab </p>
+        
+        <div id="content">
+        <table>
+	<table border = "1" cellpadding = "5" cellspacing  = "5"> 
+		<tr> 
+			<th>User Name</th>
+			<th>Message</th>
+			<th>Email</th>
+		</tr>
+		{% for row in data %}
+		<tr> 
+			<td>{{row[1]}} {{row[2]}}</td>
+			<td>{{row[3]}}</td>
+			<td>{{row[4]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+        </div>
+    </body>
+
+<a href='/add_friend'>Add a Friend</a><br/>
+<a href='/'>Home</a>

@@ -1,0 +1,20 @@
+
+<head>
+    <title>Comment a Photo</title>
+</head>
+    <body>
+        <div class="title">
+            <h1>Comment a Photo here!</h1>
+        </div>
+         <div id="content">
+                <form method="post" action="/create_comment">
+            <label for="Comment">Please enter your comment:</label>
+            <input type="text" name="comment_text"  /><br/>
+           <label for="Pictures">Please enter the Picture ID that you wanted to comment on:</label>
+            <input type="text" name="picture_id"/><br/>
+
+            
+            <input type="submit" value="Post Comment" />
+        </form>
+        
+    </body>

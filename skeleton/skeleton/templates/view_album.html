@@ -1,0 +1,45 @@
+<title>View albums!</title>
+</head>
+
+<a href='/'>Home</a>
+
+<body>
+	<div class="title">
+		<h1>Album Summary: </h1>
+        </div>
+        
+        <div id="content">
+        <table>
+	<table border = "1" cellpadding = "5" cellspacing  = "5"> 
+		<td> <b> Album Name </b> </tb> 
+		<td> <b> Create Time </b>  </tb>
+		{% for album in album_data %}
+		<tr> 
+			<td>{{album[1]}}</td>
+			<td>{{album[2]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+        </div>
+</body>
+
+
+<body>
+	<h1> Below are Photos in each Album </h1>
+	
+	{% for album in albums %}
+		<h4> {{album[0]}} </h4>
+		{% if album[1]|length %}
+			{% for photo in album[1] %}
+				<li>{{photo[1]}}<br/>
+				<img src='data:image/jpg; base64, {{ base64.b64encode(photo[0]).decode("ascii") }}' width = "200" /><br/>
+
+			{% endfor %}
+		{% else %}
+			<p> !!!!This album is empty. !!!!!</p>
+		{% endif %}
+
+	{% endfor %}
+
+</body>
+

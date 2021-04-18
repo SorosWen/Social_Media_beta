@@ -1,0 +1,27 @@
+<title>Friends of Friends!</title>
+</head>
+
+<body>
+	<div class="title">
+		<h1>Friends of Your Friends Recommendations: </h1>
+		<p> To add them as friends, send them friend request through "Add a Friend" Tab </p>
+        </div>
+        
+        <a href='/'>Home</a> <br/>
+        <a href='/add_friend'>Add a Friend</a>
+        
+        <div id="content">
+        <table>
+	<table border = "1" cellpadding = "5" cellspacing  = "5"> 
+		<td> <b>Name</b> </td>
+		<td> <b>Email</b> </td>
+		{% for row in data %}
+		<tr> 
+			<td>{{row[0]}} {{row[1]}}</td>
+			<td>{{row[2]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+        </div>
+</body>
+
